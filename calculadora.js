@@ -32,21 +32,21 @@ function calculoIMC() {
     const altura = parseInt(prompt("Ingresá tu altura (en cm):"));
     const operacion = prompt("¿Quieres saber tu IMC? (Si/No)");
 
-    if (operacion == "si") {
+    if (operacion == "Si") {
         const resultado = IMC(peso, altura);
         let clasificacion;
 
         if (resultado < 18.5) {
-            clasificacion = 'peso inferior a lo normal';
+            clasificacion = 'tu peso inferior a lo normal';
         } else if (resultado < 25) {
             clasificacion = 'te encuentras saludable';
         } else {
             clasificacion = 'tienes sobrepeso';
         }
 
-        console.log("Tu IMC es " + resultado + ' y tu ' + clasificacion);
-    } else if (operacion == 'no') {
-        console.log("Gracias por visitarnos.");
+        console.log("Tu IMC es " + resultado + ' y ' + clasificacion);
+    } else if (operacion == "No") {
+        console.log("Gracias.");
     } 
 }
 
