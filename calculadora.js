@@ -20,41 +20,38 @@
         alert("Sos menor, no podés realizar el cálculo.");
     }
 
+// Calculo para saber Indicie de Masa Corporal
 
-    function IMC(peso, altura) {
-        const resultado = peso / (altura *2); 
-        return resultado;
-    }
-    
-    function calculoIMC() {
-        const peso = parseInt(prompt("Ingresá tu peso (en kg):"));
-        const altura = parseInt(prompt("Ingresá tu altura (en cm):"));
-    
-        if ((peso) || (altura)) {
-            console.log("Por favor, ingresa valores válidos.");
-            return;
-        }
-    
-        const operacion = prompt("¿Quieres saber tu IMC? (Si/No)");
-    
-        if (operacion()) {
-            const resultado = IMC(peso, altura);
-            let clasificacion;
-    
-            if (resultado < 18.5) {
-                clasificacion = 'peso inferior al normal';
-            } else if (resultado < 25) {
-                clasificacion = 'estás saludable';
-            } else {
-                clasificacion = 'tienes sobrepeso';
-            }
-    
-            console.log("Tu IMC es " + resultado.toFixed(2) + ' y tu ' + clasificacion);
+function IMC(peso, altura) {
+    const resultado = peso / ((altura / 100) ** 2); // Convert altura to meters
+    return resultado;
+}
+
+function calculoIMC() {
+    const peso = parseFloat(prompt("Ingresá tu peso (en kg):"));
+    const altura = parseFloat(prompt("Ingresá tu altura (en cm):"));
+    const operacion = prompt("¿Quieres saber tu IMC? (Si/No)");
+
+    if (operacion == "si") {
+        const resultado = IMC(peso, altura);
+        let clasificacion;
+
+        if (resultado < 18.5) {
+            clasificacion = 'peso inferior a lo normal';
+        } else if (resultado < 25) {
+            clasificacion = 'te encuentras saludable';
         } else {
-            console.log("Gracias por visitarnos.");
+            clasificacion = 'tienes sobrepeso';
         }
-    }
-    
-    calculoIMC();
-    
+
+        console.log("Tu IMC es " + resultado + ' y tu ' + clasificacion);
+    } else if (operacion == 'no') {
+        console.log("Gracias por visitarnos.");
+    } 
+}
+
+calculoIMC();
+
+
+
 
