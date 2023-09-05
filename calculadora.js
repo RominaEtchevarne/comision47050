@@ -23,13 +23,13 @@
 // Calculo para saber Indicie de Masa Corporal
 
 function IMC(peso, altura) {
-    const resultado = peso / ((altura / 100) ** 2); // Convert altura to meters
+    const resultado = peso / ((altura / 100) ** 2); 
     return resultado;
 }
 
 function calculoIMC() {
-    const peso = parseFloat(prompt("Ingresá tu peso (en kg):"));
-    const altura = parseFloat(prompt("Ingresá tu altura (en cm):"));
+    const peso = parseInt(prompt("Ingresá tu peso (en kg):"));
+    const altura = parseInt(prompt("Ingresá tu altura (en cm):"));
     const operacion = prompt("¿Quieres saber tu IMC? (Si/No)");
 
     if (operacion == "si") {
